@@ -14,7 +14,7 @@ export const HeaderNavbarLinks = () => {
 
   const profile = data?.result;
 
-  if (profile?.userId) return <HeaderNavbarAuthenticated profile={profile} />;
+  if (profile?.user || profile?.userId) return <HeaderNavbarAuthenticated profile={profile} />;
 
   return <HeaderNavbarUnauthenticated />;
 };
