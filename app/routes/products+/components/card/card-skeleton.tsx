@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Card, CardContent, CardMedia, Skeleton, Box, Stack} from '@mui/material';
+import {Card, CardContent, Skeleton, Box, Stack} from '@mui/material';
 
 export const ProductCardSkeleton: React.FC = () => (
   <Card>

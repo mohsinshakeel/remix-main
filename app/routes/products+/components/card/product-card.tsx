@@ -5,6 +5,8 @@ import {useTranslation} from 'react-i18next';
 import {Card, CardContent, CardMedia, Typography, Box, Button, Stack} from '@mui/material';
 import {DeleteOutline} from '@mui/icons-material';
 
+import {AppButton} from '~/global/components/app-button';
+
 import {ApiProduct} from '~/api-client/types';
 
 interface ProductCardProps {
@@ -71,9 +73,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({product, doDeleteItem})
         </Box>
       </CardContent>
       <Stack direction="row" justifyContent="space-between" p={2} pt={1}>
-        <Button variant="contained" href={`/products/${product.productId}`}>
-          Edit
-        </Button>
+        <AppButton variant="contained" to={`/products/${product.productId}`}>
+          {t('common:edit')}
+        </AppButton>
         <Button variant="text" onClick={() => doDeleteItem(product)}>
           <DeleteOutline />
         </Button>

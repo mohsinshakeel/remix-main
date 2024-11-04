@@ -36,7 +36,7 @@ export const ProductsCardView = ({data, isLoading}: {data?: ApiProduct[]; isLoad
       <Grid2 container justifyContent="center" spacing={3}>
         {isLoading ? (
           Array.from({length: 6}).map((_, index) => (
-            <Grid2 item xs={12} sm={6} md={4} key={index}>
+            <Grid2 size={{xs: 12, md: 4, sm: 6}} key={index}>
               <ProductCardSkeleton />
             </Grid2>
           ))
@@ -46,7 +46,7 @@ export const ProductsCardView = ({data, isLoading}: {data?: ApiProduct[]; isLoad
           </Typography>
         ) : (
           data.map(product => (
-            <Grid2 item xs={12} sm={6} md={4} key={product.productId}>
+            <Grid2 size={{xs: 12, md: 4, sm: 6}} key={product.productId}>
               <ProductCard product={product} doDeleteItem={doDeleteItem} />
             </Grid2>
           ))

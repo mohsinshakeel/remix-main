@@ -1,11 +1,9 @@
 import {useTranslation} from 'react-i18next';
 import {useSnackbar} from 'notistack';
 
-import {Grid} from '@mui/material';
+import {Grid2, Typography} from '@mui/material';
 
 import {useMutationCategoriesDelete} from '~/services/categories';
-
-import {TableRowEmpty} from '~/global/components/table-row-empty';
 
 import {ApiCategory} from '~/api-client/types';
 
@@ -40,22 +38,24 @@ export const CategoriesCardView = ({
   };
 
   return (
-    <Grid container spacing={3}>
+    <Grid2 container spacing={3}>
       {isLoading ? (
         Array.from({length: 6}).map((_, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid2 size={{xs: 12, md: 4, sm: 6}} key={index}>
             <CategoryCardSkeleton />
-          </Grid>
+          </Grid2>
         ))
       ) : !data?.length ? (
-        <TableRowEmpty actionURL="/categories/create" colSpan={4} />
+        <Typography variant="body2" marginTop={2} fontSize="0.9rem">
+          No Categories available
+        </Typography>
       ) : (
         data.map(category => (
-          <Grid item xs={12} sm={6} md={4} key={category.categoryId}>
+          <Grid2 size={{xs: 12, md: 4, sm: 6}} key={category.categoryId}>
             <CategoryCard category={category} onDelete={doDeleteItem} />
-          </Grid>
+          </Grid2>
         ))
       )}
-    </Grid>
+    </Grid2>
   );
 };

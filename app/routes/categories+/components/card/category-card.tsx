@@ -2,7 +2,7 @@ import React from 'react';
 import {formatRelative} from 'date-fns';
 import {useTranslation} from 'react-i18next';
 
-import {Card, CardContent, Typography, Box, Button, Stack} from '@mui/material';
+import {Card, CardContent, Typography, Box, Button} from '@mui/material';
 import {DeleteOutline} from '@mui/icons-material';
 
 import {AppButton} from '~/global/components/app-button';
