@@ -51,7 +51,7 @@ export const CategoriesTable = ({data, isLoading}: {data?: ApiCategory[]; isLoad
           {isLoading ? (
             <CategoriesTableRowSkeleton />
           ) : !data?.length ? (
-            <TableRowEmpty actionURL="/create-category" colSpan={4} />
+            <TableRowEmpty actionURL="/categories/create" colSpan={4} />
           ) : (
             data?.map(row => (
               <CategoriesTableRow key={row.categoryId} row={row} doDeleteItem={doDeleteItem} />

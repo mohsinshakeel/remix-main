@@ -48,7 +48,7 @@ export const CategoriesCardView = ({
           </Grid>
         ))
       ) : !data?.length ? (
-        <TableRowEmpty actionURL="/create-category" colSpan={4} />
+        <TableRowEmpty actionURL="/categories/create" colSpan={4} />
       ) : (
         data.map(category => (
           <Grid item xs={12} sm={6} md={4} key={category.categoryId}>
